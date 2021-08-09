@@ -57,7 +57,7 @@ sudo dnf install -y stockfish pychess --refresh
 ### [OpenSUSE]
 
 **Prep (Leap 15.X)&nbsp;.&nbsp;.&nbsp;.**
-```bash
+```sh
 # Install GPG keys
 sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
@@ -78,7 +78,7 @@ sudo zypper refresh
 ```
 
 **Prep (Tumbleweed)&nbsp;.&nbsp;.&nbsp;.**
-```bash
+```sh
 # Install GPG keys
 sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
