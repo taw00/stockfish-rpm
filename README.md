@@ -2,6 +2,10 @@
 
 _.&nbsp;.&nbsp;.&nbsp;packaged for Fedora, CentOS, and OpenSUSE_
 
+**What's a chess engine?**  
+You know when you play a game of chess and choose "Play the computer?" The chess engine is _the computer_.
+
+**Stockfish . . .**  
 Stockfish is a free UCI chess engine derived from Glaurung 2.1. It is not a
 complete chess program, but requires a UCI-compatible graphical user interface
 (GUI) (e.g. PyChess, XBoard with PolyGlot, Scid, Cute Chess, eboard, Arena,
