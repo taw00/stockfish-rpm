@@ -11,11 +11,22 @@ Stockfish with it.
 
 Stockfish, in recent years, has topped the list of strongest chess engines ever
 developed. But it can be used by weak players like myself as well to learn and
-analyze or just to have fun playing a game.
+analyze or just to have fun playing a game. PyChess, which I keep recommending,
+allows you to tone down Stockfish's capabilities to bludgeon you to death with
+chess logic. :)
 
 _**What is this GitHub Repository?**_
 
-The purpose of this repository is to store all the bits and pieces needed to build and package this application for various RPM flavors of Linux. The binary (installable and runnable) packages are then built via the [Fedora Project's COPR build system](https://copr.fedorainfracloud.org/coprs/taw/stockfish/).
+The purpose of this repository is to store all the bits and pieces needed to
+build and package this application for various RPM flavors of Linux. The binary
+(installable and runnable) packages are then built via the [Fedora Project's
+COPR build system](https://copr.fedorainfracloud.org/coprs/taw/stockfish/).
+Note, core upstream code—for example, `Stockfish-sf_14.tar.gz`—will not be
+redundantly stored here. Those can be found ... up stream. What is stored in
+this repository are the _unique_ bits needed to build a source RPM—i.e., all
+the things I add, or find convenient to track within this repository. If you
+know your way around building RPMs, you will know how to work with specfile and
+sources found here.
 
 #### More about&nbsp;.&nbsp;.&nbsp;.
 

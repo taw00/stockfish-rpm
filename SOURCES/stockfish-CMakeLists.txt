@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.19)
+
+project (Stockfish)
+
+set(EXE stockfish)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
+include_directories(${PROJECT_SOURCE_DIR}/nnue
+${PROJECT_SOURCE_DIR}/nnue/features ${PROJECT_SOURCE_DIR}/nnue/layers ${PROJECT_SOURCE_DIR}/syzygy)
+
+aux_source_directory(. SOURCES)
+
+add_executable(${EXE} ${SOURCES} nnue/evaluate_nnue.cpp nnue/features/half_ka_v2.cpp syzygy/tbprobe.cpp)
+
+target_link_libraries(${EXE} -lpthread)
