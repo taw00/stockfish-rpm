@@ -6,18 +6,20 @@ _.&nbsp;.&nbsp;.&nbsp;packaged for Fedora, CentOS, and OpenSUSE_
 You know when you play a game of chess and choose "Play the computer?" The chess engine is _the computer_.
 
 **Stockfish . . .**  
-Stockfish is a free UCI chess engine derived from Glaurung 2.1. It is not a
-complete chess program, but requires a UCI-compatible graphical user interface
-(GUI) (e.g. PyChess, XBoard with PolyGlot, Scid, Cute Chess, eboard, Arena,
-Sigma Chess, Shredder, Chess Partner or Fritz) in order to be used comfortably.
-Read the documentation for your GUI of choice for information about how to use
-Stockfish with it.
+Stockfish is a free chess engine. It is not a complete chess program, but
+requires a
+[UCI-compatible](https://en.wikipedia.org/wiki/Universal_Chess_Interface)
+graphical user interface (GUI) in order to be used comfortably (e.g.
+[PyChess](https://github.com/taw00/element-rpm), [Gnome
+Chess](https://wiki.gnome.org/Apps/Chess), and many more). Read the
+documentation for your GUI of choice for information about how to use Stockfish
+with it. I recommend PyChess.
 
 Stockfish, in recent years, has topped the list of strongest chess engines ever
-developed. But it can be used by weak players like myself as well to learn and
-analyze or just to have fun playing a game. PyChess, which I keep recommending,
-allows you to tone down Stockfish's capabilities to bludgeon you to death with
-chess logic. :)
+developed. But it can be used by weak players as well, like myself, to learn
+and analyze or just to have fun playing a game. PyChess, which I keep
+recommending, allows you to tone down Stockfish's default capability to
+bludgeon you to death with chess logic. :)
 
 _**What is this GitHub Repository?**_
 
@@ -35,11 +37,13 @@ sources found here.
 #### More about&nbsp;.&nbsp;.&nbsp;.
 
 * Stockfish: <https://stockfishchess.org/>
-* PyChess: <https://pychess.github.io/>, an excellent open-source chess frontend that can use Stockfish — recommend
+* PyChess: <https://pychess.github.io/>, an excellent open-source feature-full chess frontend that can use Stockfish — recommend.
+* Gnome Chess: <https://wiki.gnome.org/Apps/Chess>, another great open-source chess frontend that can use Stockfish. It has a particularly clean interface, but is a bit less versatile as compared to PyChess.
+* GNU Chess: <https://www.gnu.org/software/chess/>, another chess engine that often is installed on Linux systems. It's not anywhere close to being as stronge as Stockfish, but it's still stronger than you are at chess.
 
 # tl;dr&nbsp;.&nbsp;.&nbsp;.
 
-## I just want to install Stockfish and play chess (using PyChess in this example)!
+## I just want to install Stockfish and play chess!
 
 ### [Fedora and CentOS]
 
@@ -51,6 +55,7 @@ sudo dnf copr enable taw/stockfish
 
 **Install&nbsp;.&nbsp;.&nbsp;.**
 ```bash
+# pychess is simply a linux chess frontend that I personally recommend
 sudo dnf install -y stockfish pychess --refresh
 ```
 
@@ -59,7 +64,6 @@ sudo dnf install -y stockfish pychess --refresh
 **Prep (Leap 15.X)&nbsp;.&nbsp;.&nbsp;.**
 ```sh
 # Install GPG keys
-sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
 # Configure and enable the Stockfish repository
 sudo echo "\
@@ -80,7 +84,6 @@ sudo zypper refresh
 **Prep (Tumbleweed)&nbsp;.&nbsp;.&nbsp;.**
 ```sh
 # Install GPG keys
-sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
 # Configure and enable the Stockfish repository
 sudo echo "\
@@ -100,6 +103,7 @@ sudo zypper refresh
 
 **Install&nbsp;.&nbsp;.&nbsp;.**
 ```bash
+# pychess is simply a linux chess frontend that I personally recommend
 sudo zypper install stockfish pychess
 ```
 
@@ -120,4 +124,4 @@ incredible chess engine.
 
 # Questions or comments&nbsp;.&nbsp;.&nbsp;.
 
-Contact: **t0dd_at_protonmail.com** or find me at **@t0dd:matrix.org** in the Matrix / Element social medias.
+Contact: **t0dd_at_protonmail.com** or find me at **@t0dd:matrix.org** in the [Matrix](https://github.com/taw00/element-rpm) social medias.
