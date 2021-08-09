@@ -58,7 +58,18 @@ sudo dnf install -y stockfish pychess --refresh
 sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
 # Configure and enable the Stockfish repository
-# TBD -- I'll add instructions here in a bit
+sudo echo "\
+[copr:copr.fedorainfracloud.org:taw:stockfish]
+name=Copr repo for stockfish owned by taw
+baseurl=https://download.copr.fedorainfracloud.org/results/taw/stockfish/opensuse-tumbleweed-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+" > /etc/zypp/repos.d/_copr\:copr.fedorainfracloud.org\:taw\:stockfish.repo
 sudo zypper refresh
 ```
 
@@ -68,7 +79,18 @@ sudo zypper refresh
 sudo rpm --import https://keybase.io/toddwarner/key.asc
 sudo rpm --import https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
 # Configure and enable the Stockfish repository
-# TBD -- I'll add instructions here in a bit
+sudo echo "\
+[copr:copr.fedorainfracloud.org:taw:stockfish]
+name=Copr repo for stockfish owned by taw
+baseurl=https://download.copr.fedorainfracloud.org/results/taw/stockfish/opensuse-leap-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/taw/stockfish/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+" > /etc/zypp/repos.d/_copr\:copr.fedorainfracloud.org\:taw\:stockfish.repo
 sudo zypper refresh
 ```
 
