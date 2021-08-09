@@ -1,4 +1,4 @@
-# Stockfish: Powerful open-source chess engine
+# Stockfish — a powerful open-source chess engine
 
 _.&nbsp;.&nbsp;.&nbsp;packaged for Fedora, CentOS, and OpenSUSE_
 
