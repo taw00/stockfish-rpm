@@ -34,13 +34,6 @@ the things I add, or find convenient to track within this repository. If you
 know your way around building RPMs, you will know how to work with specfile and
 sources found here.
 
-#### More about&nbsp;.&nbsp;.&nbsp;.
-
-* Stockfish: <https://stockfishchess.org/>
-* PyChess: <https://pychess.github.io/>, an excellent open-source feature-full chess frontend that can use Stockfish — recommend.
-* Gnome Chess: <https://wiki.gnome.org/Apps/Chess>, another great open-source chess frontend that can use Stockfish. It has a particularly clean interface, but is a bit less versatile as compared to PyChess.
-* GNU Chess: <https://www.gnu.org/software/chess/>, another chess engine that often is installed on Linux systems. It's not anywhere close to being as stronge as Stockfish, but it's still stronger than you are at chess.
-
 # tl;dr&nbsp;.&nbsp;.&nbsp;.
 
 ## I just want to install Stockfish and play chess!
@@ -113,14 +106,41 @@ sudo zypper install stockfish pychess
 2. Select a color for yourself and select Stockfish as your opponent
 3. Play chess!
 
-# Disclaimer
+## More about&nbsp;.&nbsp;.&nbsp;.
+
+* [Stockfish](https://stockfishchess.org/) — <https://stockfishchess.org/>
+* [PyChess](https://pychess.github.io/) — an excellent open-source feature-full
+  chess frontend that can use Stockfish — recommend.
+* [Gnome Chess](https://wiki.gnome.org/Apps/Chess) — another great open-source
+  chess frontend that can use Stockfish. It has a particularly clean interface,
+  but is a bit less versatile as compared to PyChess.
+* [GNU Chess](https://www.gnu.org/software/chess/) — another chess engine that
+  often is installed on Linux systems. It's not anywhere close to being as
+  strong as Stockfish, but it's still stronger than you are at chess.
+* [LiChess.org](https://lichess.org/) — open-source and modern online chess.
+  This is, IMHO, the best chess server out there. It's web interface is
+  spectacular. It does not plug into the various desktop clients though (to avoid
+  cheaters using chess hinting, etc). Some mobile applications plug in though.
+* [Free Internet Chess Server (FICS)](https://www.freechess.org/) — One of the
+  oldest and most popular chess servers. The web interface is awful and all
+  play is done through an external client. It's default client is a Java Applet
+  though, but since Java Applets are a thing of the past, setting up and
+  managing your account is challenging to say the least. Once your account is set
+  up, though, some clients, like PyChess, plug right in.
+* Other open-source chess engines that work on Linux and seem to still be
+  getting some development love: [Lc0 (Leela Chess Zero)](https://lczero.org/),
+  [GNU Chess](https://www.gnu.org/software/chess/),
+  [Fire](https://github.com/FireFather/fire/),
+  [Maia Chess](https://maiachess.com/), and PyChess itself supplies its own chess
+  engine.
+
+## Disclaimer
 
 I developed this packaging for my own use and because the officially shipped
-builds are usually woefully behind. I offer these builds for your own
+builds are usually woefully behind. I offer this build for your own
 convenience. I make no guarantee it works as it should. Buyer beware. :) I am
-in no way affiliated with the originators of Stockfish—but I do thank them and
-the larger community of developers who have made it all possible—for this
-incredible chess engine.
+in no way affiliated with the developers of Stockfish, but I do thank them and
+the larger Stockfish community who have made incredible chess engine possible.
 
 # Questions or comments&nbsp;.&nbsp;.&nbsp;.
 
