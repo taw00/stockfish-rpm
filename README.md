@@ -10,10 +10,10 @@ Stockfish is a free chess engine. It is not a complete chess program, but
 requires a
 [UCI-compatible](https://en.wikipedia.org/wiki/Universal_Chess_Interface)
 graphical user interface (GUI) in order to be used comfortably (e.g.
-[PyChess](https://github.com/taw00/element-rpm), [Gnome
-Chess](https://wiki.gnome.org/Apps/Chess), and many more). Read the
-documentation for your GUI of choice for information about how to use Stockfish
-with it. I recommend PyChess.
+[PyChess](https://github.com/taw00/pychess-rpm) (which I also build for
+Fedora), [Gnome Chess](https://wiki.gnome.org/Apps/Chess), and many more). Read
+the documentation for your GUI of choice for information about how to use
+Stockfish with it. I recommend PyChess.
 
 Stockfish, in recent years, has topped the list of strongest chess engines ever
 developed. But it can be used by weak players as well, like myself, to learn
@@ -27,12 +27,13 @@ The purpose of this repository is to store all the bits and pieces needed to
 build and package this application for various RPM flavors of Linux. The binary
 (installable and runnable) packages are then built via the [Fedora Project's
 COPR build system](https://copr.fedorainfracloud.org/coprs/taw/stockfish/).
-Note, core upstream code—for example, `Stockfish-sf_14.tar.gz`—will not be
-redundantly stored here. Those can be found ... up stream. What is stored in
-this repository are the _unique_ bits needed to build a source RPM—i.e., all
-the things I add, or find convenient to track within this repository. If you
-know your way around building RPMs, you will know how to work with specfile and
-sources found here.
+
+I store all *my* contributions here needed to enable building and packaging
+Stockfish.  Upstream code—for example, `Stockfish-sf_14.tar.gz`—will not be
+redundantly stored here. Those can be found ...
+[upstream](https://github.com/official-stockfish/Stockfish). If you know your
+way around building RPMs, you will know how to work with the specfile and other
+contributions found here.
 
 # tl;dr&nbsp;.&nbsp;.&nbsp;.
 
@@ -123,7 +124,7 @@ sudo zypper install stockfish pychess
   cheaters using chess hinting, etc). Some mobile applications plug in though.
 * [Free Internet Chess Server (FICS)](https://www.freechess.org/) — One of the
   oldest and most popular chess servers. The web interface is awful and all
-  play is done through an external client. It's default client is a Java Applet
+  play is done through an external client. Its default client is a Java Applet
   though, but since Java Applets are a thing of the past, setting up and
   managing your account is challenging to say the least. Once your account is set
   up, though, some clients, like PyChess, plug right in.
@@ -137,7 +138,7 @@ sudo zypper install stockfish pychess
 ## Disclaimer
 
 I developed this packaging for my own use and because the officially shipped
-builds are usually woefully behind. I offer this build for your own
+builds are usually woefully out of date. I offer this build for your own
 convenience. I make no guarantee it works as it should. Buyer beware. :) I am
 in no way affiliated with the developers of Stockfish, but I do thank them and
 the larger Stockfish community who have made incredible chess engine possible.
