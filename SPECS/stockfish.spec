@@ -7,12 +7,11 @@ URL:             http://%{name}chess.org
 %define istestbuild 0
 %define runchecks 0
 
+# Release: pkgrel[.extraver][.snapinfo].DIST[.minorbump]
 %define minorbump .taw
-
 %if ! %{istestbuild}
 Release:         1%{?dist}%{minorbump}
 %else
-#                pkgrel[.extraver][.snapinfo].DIST[.minorbump]
 Release:         0.1.testing%{?dist}%{minorbump}
 %endif
 
