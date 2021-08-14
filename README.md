@@ -109,15 +109,23 @@ sudo zypper install stockfish pychess
 
 ## More about&nbsp;.&nbsp;.&nbsp;.
 
-* [Stockfish](https://stockfishchess.org/) — <https://stockfishchess.org/>
+* [Stockfish](https://stockfishchess.org/) — the Stockfish home website:<https://stockfishchess.org/>  
+  `sudo dnf copr enable taw/stockfish`  
+  `sudo dnf install stockfish --refresh -y`
 * [PyChess](https://pychess.github.io/) — an excellent open-source feature-full
-  chess frontend that can use Stockfish — recommend.
+  chess frontend that can use Stockfish — recommend.  
+  `sudo dnf install pychess --refresh -y`  
+  Or install my build of Pychess:  
+  `sudo dnf copr enable taw/pychess`  
+  `sudo dnf install pychess --refresh -y`
 * [Gnome Chess](https://wiki.gnome.org/Apps/Chess) — another great open-source
   chess frontend that can use Stockfish. It has a particularly clean interface,
-  but is a bit less versatile as compared to PyChess.
+  but is a bit less versatile as compared to PyChess.  
+  `sudo dnf install gnome-chess --refresh -y`
 * [GNU Chess](https://www.gnu.org/software/chess/) — another chess engine that
   often is installed on Linux systems. It's not anywhere close to being as
-  strong as Stockfish, but it's still stronger than you are at chess.
+  strong as Stockfish, but it's still stronger than you are at chess.  
+  `sudo dnf install gnuchess --refresh -y`
 * [LiChess.org](https://lichess.org/) — open-source and modern online chess.
   This is, IMHO, the best chess server out there. It's web interface is
   spectacular. It does not plug into the various desktop clients though (to avoid
@@ -137,11 +145,12 @@ sudo zypper install stockfish pychess
 
 ## Disclaimer
 
-I developed this packaging for my own use and because the officially shipped
-builds are usually woefully out of date. I offer this build for your own
-convenience. I make no guarantee it works as it should. Buyer beware. :) I am
-in no way affiliated with the developers of Stockfish, but I do thank them and
-the larger Stockfish community who have made incredible chess engine possible.
+Stockfish already ships with Fedora and most other Linux distributions, but
+those vendor-supplied versions are usually woefully out of date. Therefore, I
+offer this build for your own convenience. I make no guarantee that it works as
+it should. Buyer beware. :) I am in no way affiliated with the developers of
+Stockfish, but I do thank them and the larger Stockfish community who have made
+incredible chess engine possible.
 
 # Questions or comments&nbsp;.&nbsp;.&nbsp;.
 
