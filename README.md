@@ -1,6 +1,6 @@
 # Stockfish — a powerful open-source chess engine
 
-_.&nbsp;.&nbsp;.&nbsp;packaged for Fedora, CentOS, and OpenSUSE_
+_.&nbsp;.&nbsp;.&nbsp;packaged for Fedora and CentOS_
 
 **What's a chess engine?**  
 You know when you play a game of chess and choose "Play the computer?" The chess engine is _the computer_.
@@ -53,6 +53,7 @@ sudo dnf copr enable taw/stockfish
 sudo dnf install -y stockfish pychess --refresh
 ```
 
+<!-- ... OPENSUSE ALREADY SHIPS THE LATEST
 ### [OpenSUSE]
 
 **Prep (Leap 15.X)&nbsp;.&nbsp;.&nbsp;.**
@@ -95,12 +96,13 @@ enabled_metadata=1
 sudo zypper refresh
 ```
 
-**Install (on Fedora)&nbsp;.&nbsp;.&nbsp;.**
+**Install (on OpenSUSE Tumbleweed)&nbsp;.&nbsp;.&nbsp;.**
 ```bash
 # gnome-chess is one of the only desktop chess frontends shipped with OpenSUSE
 # and only Tumbleweed, oddly
 sudo zypper install stockfish gnome-chess
 ```
+-->
 
 ## I installed it, now I want to play a game!
 
@@ -148,11 +150,17 @@ sudo zypper install stockfish gnome-chess
 ## Disclaimer
 
 Stockfish already ships with Fedora and most other Linux distributions, but
-those vendor-supplied versions are usually woefully out of date. Therefore, I
-offer this build for your own convenience. I make no guarantee that it works as
-it should. Buyer beware. :) I am in no way affiliated with the developers of
-Stockfish, but I do thank them and the larger Stockfish community who have made
-incredible chess engine possible.
+those vendor-supplied versions—in particular, RedHat/IBM/Fedora versions—are
+often woefully out of date. Therefore, I offer this build for your own
+convenience. I make no guarantee that it works as it should. Buyer beware. :) I
+am in no way affiliated with the developers of Stockfish, but I do thank them
+and the larger Stockfish community who have made an incredible chess engine
+possible.
+
+Remember, you don't stand a chance in beating the dated version of Stockfish
+let alone this newer one, but the gameplay improves regardless. I.e., You don't
+need this build, but I provide it anyway. Buyer beware. :)
+
 
 # Questions or comments&nbsp;.&nbsp;.&nbsp;.
 
