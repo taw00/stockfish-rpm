@@ -1,8 +1,8 @@
-Name:            stockfish
-Version:         14
-Summary:         Powerful open-source chess engine
-License:         GPLv3+
-URL:             http://%{name}chess.org
+Name:     stockfish
+Version:  14
+Summary:  Powerful open-source chess engine
+License:  GPLv3+
+URL:      http://%{name}chess.org
 
 %define istestbuild 0
 %define runchecks 0
@@ -10,9 +10,9 @@ URL:             http://%{name}chess.org
 # Release: pkgrel[.extraver][.snapinfo].DIST[.minorbump]
 %define minorbump .taw
 %if ! %{istestbuild}
-Release:         1%{?dist}%{minorbump}
+Release:  2%{?dist}%{minorbump}
 %else
-Release:         0.1.testing%{?dist}%{minorbump}
+Release:  1.1.testing%{?dist}%{minorbump}
 %endif
 
 %global _vpath_srcdir src
@@ -20,17 +20,17 @@ Release:         0.1.testing%{?dist}%{minorbump}
 
 %define _source0_release_tag sf_%{version}
 %define _source0_tree Stockfish-%{_source0_release_tag}
-Source0:         https://github.com/official-stockfish/Stockfish/archive/%{_source0_release_tag}/%{name}-%{version}.tar.gz
+Source0:  https://github.com/official-stockfish/Stockfish/archive/%{_source0_release_tag}/%{name}-%{version}.tar.gz
 
 # UCI description text
 # Origins: https://www.shredderchess.com/download/div/uci.zip
-Source10:       %{name}-uci-interface.txt
+Source10: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-uci-interface.txt
 # manpage document originates from some past Unbuntu build
-Source11:       %{name}.6
+Source11: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}.6
 
 # polyglot support
 # This file originated from this URL, but the URL no longer points to anything: https://raw.githubusercontent.com/mpurland/stockfish/master/polyglot.ini
-Source20:       %{name}-polyglot.ini
+Source20: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-polyglot.ini
 
 # Building with our CMakefile.txt fails for OpenSUSE for some reason. I don't
 # know why. Works fine for Fedora and CentOS. So, we elect to fall back to the
@@ -39,7 +39,7 @@ Source20:       %{name}-polyglot.ini
 
 %if %{buildviacmake}
 # FIXME cmake, https://github.com/official-stockfish/Stockfish/issues/272
-Source30:       %{name}-CMakeLists.txt
+Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeLists.txt
 %endif
 
 # Neural Network datafile
@@ -47,12 +47,12 @@ Source30:       %{name}-CMakeLists.txt
 # Sourced from https://tests.stockfishchess.org/api/nn/%%{nnuedatafile}
 # But we split it up into chunks ( split -n 6 nn-3475407dc199.nnue nn-3475407dc199.nnue- )
 # So that we can make github happy with files smaller than 10MB.
-Source40:       %{nnuedatafile}-aa
-Source41:       %{nnuedatafile}-ab
-Source42:       %{nnuedatafile}-ac
-Source43:       %{nnuedatafile}-ad
-Source44:       %{nnuedatafile}-ae
-Source45:       %{nnuedatafile}-af
+Source40: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-aa
+Source41: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ab
+Source42: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ac
+Source43: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ad
+Source44: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ae
+Source45: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-af
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -151,6 +151,9 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 
 
 %changelog
+* Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-1.1.testing.taw
+- URL-ified the Source tags
+
 * Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-1.taw
 * Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-0.1.testing.taw
 - build from upstream sf_14
