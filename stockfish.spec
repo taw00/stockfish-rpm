@@ -44,15 +44,18 @@ Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeL
 
 # Neural Network datafile
 %define nnuedatafile nn-3475407dc199.nnue
-# Sourced from https://tests.stockfishchess.org/api/nn/%%{nnuedatafile}
-# But we split it up into chunks ( split -n 6 nn-3475407dc199.nnue nn-3475407dc199.nnue- )
+# We split it up into chunks ( split -n 6 nn-3475407dc199.nnue nn-3475407dc199.nnue- )
 # So that we can make github happy with files smaller than 10MB.
-Source40: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-aa
-Source41: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ab
-Source42: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ac
-Source43: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ad
-Source44: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-ae
-Source45: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{nnuedatafile}-af
+# But then I changed my mind. We just reference upstream. Leaving this here for
+# posterity.
+#Source40: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-aa
+#Source41: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ab
+#Source42: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ac
+#Source43: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ad
+#Source44: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ae
+#Source45: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-af
+
+Source50: https://tests.stockfishchess.org/api/nn/%{nnuedatafile}
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -87,7 +90,9 @@ sed -e 's,\(EngineDir = \).*,\1%{_bindir},' \
 # strip MS-like end-of-line encodings (carriage returns)
 sed -i 's,\r$,,' polyglot.ini
 
-cat %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} %{SOURCE45} > ./src/%{nnuedatafile}
+#cat %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} %{SOURCE45} > ./src/%{nnuedatafile}
+mv %{SOURCE50} ./src/
+
 %if %{buildviacmake}
   # Note: _target_platform and _vpath_builddir = x86_64-redhat-linux-gnu
   mkdir -p ./%{_target_platform}/
@@ -151,6 +156,7 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 
 
 %changelog
+* Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-2.taw
 * Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-1.1.testing.taw
 - URL-ified the Source tags
 
