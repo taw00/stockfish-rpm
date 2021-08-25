@@ -115,7 +115,7 @@ sudo zypper install stockfish pychess
 * [PyChess](https://pychess.github.io/) — an excellent open-source feature-full
   chess frontend that can use Stockfish — recommend.  
   `sudo dnf install pychess --refresh -y`  
-  Or install my build of Pychess:  
+  Or install my build of Pychess (Fedora only!):  
   `sudo dnf copr enable taw/pychess`  
   `sudo dnf install pychess --refresh -y`
 * [Gnome Chess](https://wiki.gnome.org/Apps/Chess) — another great open-source
