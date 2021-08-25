@@ -36,7 +36,6 @@ Source20: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-polygl
 # know why. Works fine for Fedora and CentOS. So, we elect to fall back to the
 # upstream build process. Leave this as 0.
 %define buildviacmake 0
-
 %if %{buildviacmake}
 # FIXME cmake, https://github.com/official-stockfish/Stockfish/issues/272
 Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeLists.txt
@@ -76,23 +75,31 @@ Stockfish with it.
 
 
 %prep
+# SOURCE0, SOURCE10, SOURCE11, SOURCE30, SOURCE50
 %setup -q -T -b 0 -n %{_source0_tree}
 cp -t. -p %{SOURCE10} %{SOURCE11}
+%if %{buildviacmake}
+  # prep cmake with Fedora compiler flags
+  cp -p %{SOURCE30} ./src/CMakeLists.txt
+  rm ./src/Makefile
+%endif
+mv %{SOURCE50} ./src/
 
-# strip MS-like end-of-line encodings (carriage returns)
+# SOURCE10 prep part2
+# dos2unix-like-strip MS-like end-of-line encodings (carriage returns)
 sed -i 's,\r$,,' %{name}-uci-interface.txt
 
+# SOURCE20 prep part2
 # polyglot to match upstream installed binary and disable log
 sed -e 's,\(EngineDir = \).*,\1%{_bindir},' \
  -e 's,\(EngineCommand = \).*,\1%{name},' \
  -e 's,\(LogFile = \).*,\1~/,' -e 's,\(LogFile = \).*,\1false,' \
  %{SOURCE20} > polyglot.ini
-# strip MS-like end-of-line encodings (carriage returns)
+# dos2unix-like-strip MS-like end-of-line encodings (carriage returns)
 sed -i 's,\r$,,' polyglot.ini
 
+# SOURCE40-40 if used
 #cat %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} %{SOURCE45} > ./src/%{nnuedatafile}
-mv %{SOURCE50} ./src/
-
 %if %{buildviacmake}
   # Note: _target_platform and _vpath_builddir = x86_64-redhat-linux-gnu
   mkdir -p ./%{_target_platform}/
@@ -102,10 +109,6 @@ mv %{SOURCE50} ./src/
     mkdir -p ./redhat-linux-build/
     ln ./%{_target_platform}/%{nnuedatafile} ./redhat-linux-build/
   %endif
-
-  # prep cmake with Fedora compiler flags
-  cp -p %{SOURCE30} ./src/CMakeLists.txt
-  rm ./src/Makefile
 %endif
 
 
@@ -159,6 +162,7 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 * Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-2.taw
 * Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-1.1.testing.taw
 - URL-ified the Source tags
+- minor flow and descriptive changes
 
 * Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-1.taw
 * Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-0.1.testing.taw
