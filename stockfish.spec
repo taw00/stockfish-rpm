@@ -99,7 +99,7 @@ sed -e 's,\(EngineDir = \).*,\1%{_bindir},' \
 sed -i 's,\r$,,' polyglot.ini
 
 # SOURCE40-40 if used
-#cat %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} %{SOURCE45} > ./src/%{nnuedatafile}
+#cat %%{SOURCE40} %%{SOURCE41} %%{SOURCE42} %%{SOURCE43} %%{SOURCE44} %%{SOURCE45} > ./src/%%{nnuedatafile}
 %if %{buildviacmake}
   # Note: _target_platform and _vpath_builddir = x86_64-redhat-linux-gnu
   mkdir -p ./%{_target_platform}/
