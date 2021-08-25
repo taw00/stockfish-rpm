@@ -95,10 +95,11 @@ enabled_metadata=1
 sudo zypper refresh
 ```
 
-**Install&nbsp;.&nbsp;.&nbsp;.**
+**Install (on Fedora)&nbsp;.&nbsp;.&nbsp;.**
 ```bash
-# pychess is simply a linux chess frontend that I personally recommend
-sudo zypper install stockfish pychess
+# gnome-chess is one of the only desktop chess frontends shipped with OpenSUSE
+# and only Tumbleweed, oddly
+sudo zypper install stockfish gnome-chess
 ```
 
 ## I installed it, now I want to play a game!
@@ -120,7 +121,8 @@ sudo zypper install stockfish pychess
   `sudo dnf install pychess --refresh -y`
 * [Gnome Chess](https://wiki.gnome.org/Apps/Chess) — another great open-source
   chess frontend that can use Stockfish. It has a particularly clean interface,
-  but is a bit less versatile as compared to PyChess.  
+  but is a bit less versatile as compared to PyChess. Also, Gnome Chess is
+  available for OpenSUSE Tumbleweed whereas PyChess is not.  
   `sudo dnf install gnome-chess --refresh -y`
 * [GNU Chess](https://www.gnu.org/software/chess/) — another chess engine that
   often is installed on Linux systems. It's not anywhere close to being as
