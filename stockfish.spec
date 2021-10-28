@@ -1,5 +1,5 @@
 Name:     stockfish
-Version:  14
+Version:  14.1
 Summary:  Powerful open-source chess engine
 License:  GPLv3+
 URL:      http://%{name}chess.org
@@ -10,9 +10,9 @@ URL:      http://%{name}chess.org
 # Release: pkgrel[.extraver][.snapinfo].DIST[.minorbump]
 %define minorbump .taw
 %if ! %{istestbuild}
-Release:  2%{?dist}%{minorbump}
+Release:  1%{?dist}%{minorbump}
 %else
-Release:  1.1.testing%{?dist}%{minorbump}
+Release:  0.1.testing%{?dist}%{minorbump}
 %endif
 
 %global _vpath_srcdir src
@@ -42,11 +42,17 @@ Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeL
 %endif
 
 # Neural Network datafile
-%define nnuedatafile nn-3475407dc199.nnue
-# We split it up into chunks ( split -n 6 nn-3475407dc199.nnue nn-3475407dc199.nnue- )
+# Note, to find what each release's datafile name is, download the stockfile tar.gz source,
+# extract it, and then
+#   grep -r EvalFileDefaultName Stockfish-sf_* |grep define |grep -v shell
+#%%define nnuedatafile nn-3475407dc199.nnue
+%define nnuedatafile nn-13406b1dcbe0.nnue
+# What we use to do with that ...
+# Download nnue data file via 
+#   wget https://tests.stockfishchess.org/api/nn/%%{nnuedatafile}
+# Split it up into chunks. E.g.,
+#   split -n 6 nn-3475407dc199.nnue nn-3475407dc199.nnue-
 # So that we can make github happy with files smaller than 10MB.
-# But then I changed my mind. We just reference upstream. Leaving this here for
-# posterity.
 #Source40: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-aa
 #Source41: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ab
 #Source42: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ac
@@ -54,6 +60,8 @@ Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeL
 #Source44: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-ae
 #Source45: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%%{nnuedatafile}-af
 
+# But then I changed my mind. We just reference upstream. Leaving the above instructions
+# there for posterity.
 Source50: https://tests.stockfishchess.org/api/nn/%{nnuedatafile}
 
 BuildRequires:  gcc
@@ -159,6 +167,10 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 
 
 %changelog
+* Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-1.taw
+* Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-0.1.testing.taw
+- https://github.com/official-stockfish/Stockfish/releases/tag/sf_14.1
+
 * Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-2.taw
 * Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-1.1.testing.taw
 - URL-ified the Source tags
