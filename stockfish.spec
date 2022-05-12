@@ -1,5 +1,5 @@
 Name:     stockfish
-Version:  14.1
+Version:  15
 Summary:  Powerful open-source chess engine
 License:  GPLv3+
 URL:      http://%{name}chess.org
@@ -46,8 +46,9 @@ Source30: https://github.com/taw00/stockfish-rpm/raw/main/SOURCES/%{name}-CMakeL
 # extract it, and then
 #   grep -r EvalFileDefaultName Stockfish-sf_* |grep define |grep -v shell
 #%%define nnuedatafile nn-3475407dc199.nnue
-%define nnuedatafile nn-13406b1dcbe0.nnue
-# What we use to do with that ...
+#%%define nnuedatafile nn-13406b1dcbe0.nnue
+%define nnuedatafile nn-6877cd24400e.nnue
+# What we USED TO DO with that (use the follow on method instead) ...
 # Download nnue data file via 
 #   wget https://tests.stockfishchess.org/api/nn/%%{nnuedatafile}
 # Split it up into chunks. E.g.,
@@ -167,6 +168,11 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 
 
 %changelog
+* Thu May 12 2022 Todd Warner <t0dd@protonmail.com> 15-1.taw
+* Thu May 12 2022 Todd Warner <t0dd@protonmail.com> 15-0.1.testing.taw
+- https://github.com/official-stockfish/Stockfish/releases/tag/sf_15
+- updated nnue data file fetch to nn-6877cd24400e.nnue
+
 * Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-1.taw
 * Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-0.1.testing.taw
 - https://github.com/official-stockfish/Stockfish/releases/tag/sf_14.1
