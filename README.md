@@ -2,6 +2,11 @@
 
 _.&nbsp;.&nbsp;.&nbsp;packaged for Fedora and CentOS_
 
+**UPDATE (20250217):** This build has not been maintained for a very long time.
+Why?  Because the Fedora distro has been far better about maintaining and
+keeping up with the versioning of Stockfish than it has in the past. If it ever
+falls way behind again, perhaps I shall revive this. Cheers! -t
+
 **What's a chess engine?**  
 You know when you play a game of chess and choose "Play the computer?" The chess engine is _the computer_.
 
