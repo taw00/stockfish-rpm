@@ -169,5 +169,5 @@ need this build, but I provide it anyway. Buyer beware. :)
 
 
 # Questions or comments&nbsp;.&nbsp;.&nbsp;.
+—Todd Warner <a href="https://forms.gle/ogCeqcdqNSogYkPU8">(google contact form)</a>
 
-Contact: **t0dd_at_protonmail.com** or find me at **@t0dd:matrix.org** in the [Matrix](https://github.com/taw00/element-rpm) social medias.

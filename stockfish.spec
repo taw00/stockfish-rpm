@@ -168,22 +168,22 @@ cp -p polyglot.ini %{buildroot}%{_sysconfdir}/%{name}
 
 
 %changelog
-* Thu May 12 2022 Todd Warner <t0dd@protonmail.com> 15-1.taw
-* Thu May 12 2022 Todd Warner <t0dd@protonmail.com> 15-0.1.testing.taw
+* Thu May 12 2022 Todd Warner <t0dd_at_protonmail_dot_com> 15-1.taw
+* Thu May 12 2022 Todd Warner <t0dd_at_protonmail_dot_com> 15-0.1.testing.taw
 - https://github.com/official-stockfish/Stockfish/releases/tag/sf_15
 - updated nnue data file fetch to nn-6877cd24400e.nnue
 
-* Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-1.taw
-* Thu Oct 28 2021 Todd Warner <t0dd@protonmail.com> 14.1-0.1.testing.taw
+* Thu Oct 28 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14.1-1.taw
+* Thu Oct 28 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14.1-0.1.testing.taw
 - https://github.com/official-stockfish/Stockfish/releases/tag/sf_14.1
 
-* Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-2.taw
-* Wed Aug 25 2021 Todd Warner <t0dd@protonmail.com> 14-1.1.testing.taw
+* Wed Aug 25 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14-2.taw
+* Wed Aug 25 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14-1.1.testing.taw
 - URL-ified the Source tags
 - minor flow and descriptive changes
 
-* Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-1.taw
-* Mon Aug 9 2021 Todd Warner <t0dd@protonmail.com> 14-0.1.testing.taw
+* Mon Aug 9 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14-1.taw
+* Mon Aug 9 2021 Todd Warner <t0dd_at_protonmail_dot_com> 14-0.1.testing.taw
 - build from upstream sf_14
 - removed source URL references that are no longer valid
 - Readme.md is now README.md in this version
